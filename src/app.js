@@ -28,7 +28,7 @@ app.post("/add", (req, res) => {
     } else if (errorOverflow(num1, num2)) {
       res.status(400).send({ error: "Overflow" });
     } else {
-      res.status(200).send({ result: `${num1} + ${num2}` });
+      res.status(200).send({ result: parseInt(num1) + parseInt(num2) });
     }
   } else {
     res.status(400).send({ error: "Invalid data types" });
@@ -44,7 +44,7 @@ app.post("/subtract", (req, res) => {
     } else if (errorOverflow(num1, num2)) {
       res.status(400).send({ error: "Overflow" });
     } else {
-      res.status(200).send({ result: `${num1} - ${num2}` });
+      res.status(200).send({ result: parseInt(num1) - parseInt(num2) });
     }
   } else {
     res.status(400).send({ error: "Invalid data types" });
@@ -60,7 +60,7 @@ app.post("/multiply", (req, res) => {
     } else if (errorOverflow(num1, num2)) {
       res.status(400).send({ error: "Overflow" });
     } else {
-      res.status(200).send({ result: `${num1} * ${num2}` });
+      res.status(200).send({ result: parseInt(num1) * parseInt(num2) });
     }
   } else {
     res.status(400).send({ error: "Invalid data types" });
@@ -79,7 +79,7 @@ app.post("/divide", (req, res) => {
       if (parseInt(num2) === 0) {
         res.status(400).send({ error: "Cannot divide by zero" });
       } else {
-        res.status(200).send({ result: `${num1} / ${num2}` });
+        res.status(200).send({ result: parseInt(num1) / parseInt(num2) });
       }
     }
   } else {
